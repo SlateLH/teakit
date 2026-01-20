@@ -3,6 +3,7 @@ package commands
 import (
 	"fmt"
 	"path/filepath"
+	"strings"
 
 	"github.com/SlateLH/teakit/internal/config"
 	"github.com/SlateLH/teakit/internal/registry"
@@ -81,7 +82,7 @@ func Add(opts AddOptions) error {
 		regAlias = opts.Registry
 	}
 
-	localPath := filepath.Join(cfg.ComponentsDir, regAlias, component)
+	localPath := filepath.Join(cfg.ComponentsDir, regAlias, filepath.Join(strings.Split(component, "/")...))
 	if err := registry.WriteFile(localPath, data, opts.Force); err != nil {
 		return err
 	}
