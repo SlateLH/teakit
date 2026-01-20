@@ -7,7 +7,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "teakit",
 	Short: "Installer for charmbracelet/bubbles components",
-	Long:  "teakit initializes and installs reusable charmbracelet/bubbles components into your project.",
+	Long:  "teakit initializes and installs reusable charmbracelet/bubbletea components into your project.",
 }
 
 func Execute() {
